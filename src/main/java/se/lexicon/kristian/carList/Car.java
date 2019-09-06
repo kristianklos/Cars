@@ -8,7 +8,6 @@ public class Car {
     private String carYear;
     private String carColor;
     private int carEngine;
-    private boolean ready;
     private boolean canDrive;
 
 
@@ -16,16 +15,15 @@ public class Car {
         this();
 
         this.setCarModel(carModel);
-        this.setCarYear(carYear);
         this.setCarColor(carColor);
-
+        this.setCarYear(carYear);
         this.setCarEngine(carEngine);
     }
 
 
     private Car() {
         canDrive = false;
-        ready = false;
+        boolean ready = false;
         carID = carCount++;
     }
 
@@ -38,17 +36,17 @@ public class Car {
     //Getters & setters
 
     //ID
-
     public int getCarID(){
         return carID;
     }
+
 
     //Model
     public String getCarModel() {
         return carModel;
     }
 
-    public void setCarModel(String carModel) {
+    private void setCarModel(String carModel) {
         this.carModel = carModel;
     }
 
@@ -56,12 +54,13 @@ public class Car {
         return true;
     }
 
+
     //Color
     public String getCarColor() {
         return carColor;
     }
 
-    public void setCarColor(String carColor) {
+    private void setCarColor(String carColor) {
         this.carColor = carColor;
     }
 
@@ -75,7 +74,7 @@ public class Car {
         return carYear;
     }
 
-    public void setCarYear(String carYear) {
+    private void setCarYear(String carYear) {
         this.carYear = carYear;
     }
 
@@ -89,25 +88,17 @@ public class Car {
         return carEngine;
     }
 
-    public int setCarEngine(int carEngine) {
+    private void setCarEngine(int carEngine) {
         if (carEngine == 1){
             this.canDrive = true;
         }
-        return carEngine;
     }
-
 
     public void checkEngine() {
-        if (carEngine >= 0) {
-            this.canDrive = false;
-            if (carEngine == 1) {
-                this.canDrive = true;
-            }
-
-
-        }
 
     }
+
+
 
     //isReady
     public boolean isReady() {
