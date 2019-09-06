@@ -31,7 +31,7 @@ public class Car {
 
     //printing out the carlist
     public void checking() {
-        System.out.println(carID + ".Model:\t" + carModel + "\tColor:\t" + carColor + " \tYear:\t" + carYear);
+        System.out.println(carID + ". Model:\t" + carModel + "\tColor:\t " + carColor + " \tYear:\t" + carYear + "\tEngine installed:\t" + (canDrive ? "Yes" : "No") );
     }
 
 
@@ -86,11 +86,13 @@ public class Car {
 
     //Engine
     public int getCarEngine() {
-
         return carEngine;
     }
 
     public int setCarEngine(int carEngine) {
+        if (carEngine == 1){
+            this.canDrive = true;
+        }
         return carEngine;
     }
 
